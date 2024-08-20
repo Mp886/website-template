@@ -8,7 +8,7 @@ WORKDIR /usr/local/apache2/htdocs/
 COPY . .
 
 # Expose port 80 to the outside world
-EXPOSE 80
+EXPOSE 8000
 
 # Start Apache2 when the container launches
 CMD ["httpd-foreground"]
