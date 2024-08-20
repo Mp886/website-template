@@ -1,17 +1,14 @@
-# Use the official Nginx image as the base image
-FROM nginx:alpine
+# Use the official Apache HTTP Server image as the base image
+FROM httpd:alpine
 
-# Set the working directory to /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
+# Set the working directory to /usr/local/apache2/htdocs/
+WORKDIR /usr/local/apache2/htdocs/
 
-# Remove the default Nginx index file
-RUN rm -rf ./*
-
-# Copy the current directory contents into the container at /usr/share/nginx/html
+# Copy the current directory contents into the container at /usr/local/apache2/htdocs/
 COPY . .
 
 # Expose port 80 to the outside world
-EXPOSE 8000
+EXPOSE 80
 
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+# Start Apache2 when the container launches
+CMD ["httpd-foreground"]
