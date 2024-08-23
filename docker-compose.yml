@@ -1,6 +1,6 @@
 version: "3.3"
 services : 
   web :
-     build: beast106/website-template:v1
+     build: ./var/lib/jenkins/workspace/website-template
      ports: 
          - "8000:80"
