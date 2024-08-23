@@ -1,6 +1,6 @@
 version: "3.3"
 services : 
   web :
-     build: .
+     build: beast106/website-template:v1
      ports: 
          - "8000:80"
